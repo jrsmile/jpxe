@@ -1,1 +1,3 @@
+#!ipxe
 echo It's Working
+shell
