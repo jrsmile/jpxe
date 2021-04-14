@@ -1,0 +1,54 @@
+#!ipxe
+
+set user-class jpxe
+
+:retry_dhcp
+dhcp || goto retry_dhcp
+
+isset ${93} || goto no_arch
+iseq ${93} 0  && set arch x86_i386_bios ||
+iseq ${93} 6  && set arch x86_i386_efi  ||
+iseq ${93} 7  && set arch x86_64bit_efi ||
+iseq ${93} 10 && set arch arm_32bit_efi ||
+iseq ${93} 11 && set arch arm_64bit_efi ||
+:no_arch
+
+goto start
+
+:reboot
+echo Boot failed, rebooting in 5 seconds...
+prompt --key s --timeout 1000 Press 's' to start Shell ... 5 && shell ||
+prompt --key s --timeout 1000 Press 's' to start Shell ... 4 && shell ||
+prompt --key s --timeout 1000 Press 's' to start Shell ... 3 && shell ||
+prompt --key s --timeout 1000 Press 's' to start Shell ... 2 && shell ||
+prompt --key s --timeout 1000 Press 's' to start Shell ... 1 && shell ||
+reboot
+
+:start
+echo ========================================================
+echo UUID: ${uuid}
+echo Manufacturer: ${manufacturer}
+echo Product name: ${product}
+isset ${arch} && echo Processor arch: ${arch} ||
+isset ${asset} && echo Asset Name: ${asset:uristring} ||
+isset ${hostname} && echo Hostname: ${hostname} ||
+echo
+echo MAC address: ${net0/mac}
+echo IP address: ${net0/ip}
+echo Netmask: ${net0/netmask}
+echo Gateway: ${gateway}
+echo DNS: ${dns}
+echo Domain: ${domain}
+isset ${42} && echo NTP: ${42:ipv4} ||
+echo
+echo IPv6 address: ${net0.ndp.0/ip6:ipv6}
+echo IPv6 DNS: ${dns6}
+echo
+isset ${filename} && echo Booting from: ${filename} ||
+echo ========================================================
+prompt --key s --timeout 1000 Press 's' to start Shell ... 5 && shell ||
+prompt --key s --timeout 1000 Press 's' to start Shell ... 4 && shell ||
+prompt --key s --timeout 1000 Press 's' to start Shell ... 3 && shell ||
+prompt --key s --timeout 1000 Press 's' to start Shell ... 2 && shell ||
+prompt --key s --timeout 1000 Press 's' to start Shell ... 1 && shell ||
+chain ${filename} || goto reboot
