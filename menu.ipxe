@@ -1,3 +1,5 @@
 #!ipxe
-echo It's Working well
-chain http://boot.salstar.sk
+imgfetch https://jrsmile.github.io/jpxe/vmlinuz
+kernel vmlinuz norestore pause nodhcp vga=792 kmap=qwertz/de-latin1-nodeadkeys ip=${net0/ip}::${gateway}:${net0/netmask}:box:eth0:off:${dns} httplist=jrsmile.github.io/jpxe/TCL/modules.txt
+initrd https://jrsmile.github.io/jpxe/core.gz
+boot
