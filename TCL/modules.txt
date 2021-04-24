@@ -7,6 +7,7 @@ TCL/libffi.tcz
 TCL/glib2.tcz
 TCL/fuse.tcz
 TCL/ca-certificates.tcz
+TCL/expat2.tcz
 TCL/curl.tcz
 TCL/go.tcz
 TCL/git.tcz
