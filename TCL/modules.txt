@@ -9,3 +9,4 @@ TCL/fuse.tcz
 TCL/ca-certificates.tcz
 TCL/curl.tcz
 TCL/go.tcz
+TCL/git.tcz
