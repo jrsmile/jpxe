@@ -1,5 +1,5 @@
 #!ipxe
-imgfetch http://jrsmile.github.io/jpxe/vmlinuz
+imgfetch http://jpxe.double-gamers.ml/jpxe/vmlinuz
 kernel vmlinuz norestore pause nodhcp vga=792 kmap=qwertz/de-latin1-nodeadkeys ip=${net0/ip}::${gateway}:${net0/netmask}:box:eth0:off:${dns} httplist=jrsmile.github.io/jpxe/TCL/modules.txt
-initrd http://jrsmile.github.io/jpxe/core.gz
+initrd http://jpxe.double-gamers.ml/jpxe/core.gz
 boot
