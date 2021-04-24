@@ -6,4 +6,5 @@ TCL/openssh.tcz
 TCL/libffi.tcz
 TCL/glib2.tcz
 TCL/fuse.tcz
+TCL/ca-certificates.tcz
 TCL/curl.tcz
