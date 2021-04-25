@@ -1,4 +1,4 @@
 #!ipxe
-kernel http://jpxe.double-gamers.ml/vmlinuz norestore pause nodhcp vga=792 kmap=qwertz/de-latin1-nodeadkeys ip=${net0/ip}::${gateway}:${net0/netmask}:box:eth0:off:${dns} httplist=jpxe.double-gamers.ml/TCL/modules.txt
+kernel http://jpxe.double-gamers.ml/vmlinuz norestore pause nodhcp vga=791 kmap=qwertz/de-latin1-nodeadkeys ip=${net0/ip}::${gateway}:${net0/netmask}:box:eth0:off:${dns} httplist=jpxe.double-gamers.ml/TCL/modules.txt
 initrd http://jpxe.double-gamers.ml/core.gz
 boot
