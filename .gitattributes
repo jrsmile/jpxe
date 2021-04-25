@@ -1,1 +1,2 @@
+git lfs track "*.squashfs"
 *.squashfs filter=lfs diff=lfs merge=lfs -text
