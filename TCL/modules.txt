@@ -10,3 +10,9 @@ TCL/ca-certificates.tcz
 TCL/expat2.tcz
 TCL/curl.tcz
 TCL/git.tcz
+TCL/readline.tcz
+TCL/sqlite3.tcz
+TCL/gdbm.tcz
+TCL/bzip2-lib.tcz
+TCL/python.tcz
+TCL/s3cmd.tcz
