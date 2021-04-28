@@ -1,4 +1,4 @@
 #!ipxe
-kernel http://jpxe.double-gamers.ml/vmlinuz fetch=http://jpxe.double-gamers.ml/filesystem.squashfs boot=live config noswap edd=on nomodeset noprompt nosplash locales=de_DE.UTF-8 keyboard-layouts=de ocs_prerun="dhclient" ocs_live_run="/usr/sbin/ocs-sr -um beginner -q2 -j2 -z1p -sc -p poweroff ask_user" ocs_live_extra_param="" ocs_repository="smb://clonezilla:clonezilla@192.168.178.4/Backups/" ocs_live_batch=no ocs_netlink_timeout=5
+kernel http://jpxe.double-gamers.ml/vmlinuz fetch=https://github.com/jrsmile/jpxe/releases/download/v1.0.0/filesystem.squashfs boot=live config noswap edd=on nomodeset noprompt nosplash locales=de_DE.UTF-8 keyboard-layouts=de ocs_prerun="dhclient" ocs_live_run="/usr/sbin/ocs-sr -um beginner -q2 -j2 -z1p -sc -p poweroff ask_user" ocs_live_extra_param="" ocs_repository="smb://clonezilla:clonezilla@192.168.178.4/Backups/" ocs_live_batch=no ocs_netlink_timeout=5
 initrd http://jpxe.double-gamers.ml/initrd.img
 boot
